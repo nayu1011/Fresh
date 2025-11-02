@@ -12,6 +12,7 @@ Fresh（もぎたてフリマサイト）
 ### Docker ビルド
 ```bash
 git clone https://github.com/nayu1011/Fresh.git
+cd Fresh
 docker compose up -d --build
 ```
 

@@ -1,0 +1,6 @@
+App\Models\Product::with('seasons')->first();
+$p = App\Models\Product::with('seasons')->first();
+$p->toArray();
+exit
+Route::has('products.search');
+exit

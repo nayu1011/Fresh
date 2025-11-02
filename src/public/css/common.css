@@ -1,0 +1,14 @@
+.app__title {
+  color: #f5c800;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: normal;
+  padding: 10px 10px;
+}
+
+.content {
+  background-color: #f8f8f8;
+  margin: 0 auto;
+  padding: 10px;
+}
+

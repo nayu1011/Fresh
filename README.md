@@ -38,24 +38,28 @@ nginx 1.21.1
 ```mermaid
 erDiagram
     PRODUCTS {
-        int id PK
-        string name
-        int price
-        string description
-        string image
-        timestamps
+        BIGINT id PK
+        VARCHAR name
+        INT price
+        VARCHAR description
+        VARCHAR image
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
     }
 
     SEASONS {
-        int id PK
-        string name
-        timestamps
+        BIGINT id PK
+        VARCHAR name
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
     }
 
     PRODUCTS_SEASONS {
-        int id PK
-        int product_id FK
-        int season_id FK
+        BIGINT id PK
+        BIGINT product_id FK
+        BIGINT season_id FK
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
     }
 
     PRODUCTS ||--o{ PRODUCTS_SEASONS : has
@@ -71,7 +75,7 @@ erDiagram
 | name | VARCHAR(255) | NOT NULL |  | 商品名 |
 | price | INT | NOT NULL |  | 値段（0〜10000円） |
 | description | VARCHAR(120) | NOT NULL |  | 商品説明（120文字以内） |
-| image | VARCHAR(255) | NOT NULL |  | 商品画像パス（例：img/apple.png） |
+| image | VARCHAR(255) | NOT NULL |  | 商品画像パス（例：img/kiwi.png） |
 | created_at | TIMESTAMP | NULL | CURRENT_TIMESTAMP | 登録日時 |
 | updated_at | TIMESTAMP | NULL | CURRENT_TIMESTAMP | 更新日時 |
 
@@ -100,5 +104,5 @@ erDiagram
 
 
 ## URL
-開発環境：http://localhost/products
+開発環境：http://localhost/products  
 phpMyAdmin：http://localhost:8080/

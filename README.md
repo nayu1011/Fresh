@@ -18,13 +18,23 @@ docker compose up -d --build
 ＊MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集してください。
 
 ### Laravel環境構築
+.env.exampleファイルから.envを作成し、以下の環境変数を変更してください。
+DB_HOST=mysql
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+
 ```bash
-.env.exampleファイルから.envを作成し、環境変数を変更
 docker compose exec php bash
 composer install
 php artisan key:generate
 php artisan migrate --seed
 php artisan storage:link
+```
+※ すでにリンクが存在する場合は
+「The [/var/www/public/storage] link already exists.」と表示されますが問題ありません。
+
+```bash
 exit
 ```
 

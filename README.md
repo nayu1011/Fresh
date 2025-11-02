@@ -19,31 +19,30 @@ docker compose up -d --build
 ＊MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集してください。
 
 ### Laravel環境構築
+```bash
 .env.exampleファイルから.envを作成し、以下の環境変数を変更してください。
 DB_HOST=mysql
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 
-```bash
+
 docker compose exec php bash
 composer install
 php artisan key:generate
 php artisan migrate --seed
 php artisan storage:link
-```
-※ すでにリンクが存在する場合は
-「The [/var/www/public/storage] link already exists.」と表示されますが問題ありません。
+　※ すでにリンクが存在する場合は
+　「The [/var/www/public/storage] link already exists.」と表示されますが問題ありません。
 
-```bash
 exit
 ```
 
 ## 使用技術(実行環境)
-php 8.1
-Laravel  8.83.29
-MySQL 8.0.26
-nginx 1.21.1
+php 8.1  
+Laravel  8.83.29  
+MySQL 8.0.26  
+nginx 1.21.1  
 
 ## ER図
 ```mermaid

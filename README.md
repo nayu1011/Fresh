@@ -19,8 +19,8 @@ docker compose up -d --build
 
 ### Laravel環境構築
 ```bash
+.env.exampleファイルから.envを作成し、環境変数を変更
 docker compose exec php bash
-cp .env.example .env
 composer install
 php artisan key:generate
 php artisan migrate --seed
